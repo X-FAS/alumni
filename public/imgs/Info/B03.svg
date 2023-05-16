@@ -1,0 +1,15 @@
+<svg width="375" height="300" viewBox="0 0 375 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H375V274.316C375 274.316 280.606 300 187.5 300C94.3936 300 0 274.316 0 274.316V0Z" fill="#184B8A"/>
+<g style="mix-blend-mode:soft-light" opacity="0.2">
+<circle cx="-3" cy="184" r="100" fill="white"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.15">
+<circle cx="365" cy="78" r="68" fill="white"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.15">
+<circle cx="320.5" cy="134.5" r="35.5" fill="white"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.15">
+<circle cx="84" cy="52" r="42" fill="white"/>
+</g>
+</svg>

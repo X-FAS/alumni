@@ -1,0 +1,52 @@
+{
+  "name": "vue2.7",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "amfe-flexible": "^2.2.1",
+    "animate.css": "^4.1.1",
+    "axios": "^1.4.0",
+    "core-js": "^3.8.3",
+    "cube-ui": "~1.12.15",
+    "masonry-layout": "^4.2.2",
+    "miment": "0.0.9",
+    "normalize.css": "^8.0.1",
+    "pinyin-pro": "^3.14.0",
+    "postcss-pxtorem": "^6.0.0",
+    "vue": "^2.7.0",
+    "vue-router": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0",
+    "vue-cli-plugin-cube-ui": "~0.2.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "Android >= 4.0",
+    "iOS >= 8"
+  ],
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/lib/${member}",
+      "kebabCase": true,
+      "style": {
+        "ignore": [
+          "create-api",
+          "better-scroll",
+          "locale"
+        ]
+      }
+    }
+  }
+}
