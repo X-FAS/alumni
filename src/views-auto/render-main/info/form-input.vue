@@ -27,6 +27,10 @@ export default {
         trigger: {
             type: String,
             default: 'blur'
+        },
+        readonly: {
+            type: Boolean,
+            default: false
         }
     },
     data () {
@@ -36,6 +40,7 @@ export default {
     },
     methods: {
         onBlur () {
+            if (this.$props.readonly) return
             if (this.$props.trigger === 'blur') this.toValid().catch(err=>err)
         },
         toValid () {
@@ -62,9 +67,10 @@ export default {
 </script>
 
 <template>
-    <div class="input-container">
+    <div class="input-container" @click="$emit('click')">
         <img class="prefix-icon" :src="$props.prefixSrc" alt="">
         <input
+            :readonly="readonly"
             ref="inputRef"
             type="text"
             :value="inputValue"
@@ -101,8 +107,8 @@ export default {
         left: 20px;
         top: 50%;
         transform: translateY(-50%);
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
 
     input {
@@ -113,7 +119,7 @@ export default {
         color: rgba(168, 170, 174, 1);
         font-family: PingFang SC;
         font-size: 14px;
-        padding-left: 56px;
+        padding-left: 50px;
         width: 100%;
         box-sizing: border-box;
         outline: none;

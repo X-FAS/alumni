@@ -9,7 +9,7 @@ import {
   // basic
   Button,
 //   Loading,
-//   Tip,
+  Tip,
 //   Toolbar,
 //   TabBar,
 //   TabPanels,
@@ -32,7 +32,7 @@ import {
 //   Toast,
 //   Picker,
   CascadePicker,
-//   DatePicker,
+  DatePicker,
 //   TimePicker,
 //   SegmentPicker,
 //   Dialog,
@@ -52,3 +52,5 @@ import {
 Vue.use(Button)
 Vue.use(Select)
 Vue.use(CascadePicker)
+Vue.use(Tip)
+Vue.use(DatePicker)

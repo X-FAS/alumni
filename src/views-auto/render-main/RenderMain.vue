@@ -11,7 +11,7 @@ import { getBgUrl, getImgUrl } from '@/assets/utils/public-img'
 import { ref } from 'vue'
 
 // 是否已登录
-const isLogin = ref(true)
+const isLogin = ref(false)
 </script>
 <template>
     <div>

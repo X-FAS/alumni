@@ -2,22 +2,26 @@
 export default {
     routerOptions: {
         path: 'register',
-        parentName: 'render-main',
-        meta: {
-            indexTop: 1
+        parentName: 'render-main'
+    },
+    data () {
+        return {
+            isAgree: false
         }
     },
     methods: {
         onSubmit() {
             const validTask = [];
             for (const child of this.$children) {
-                validTask.push(child.toValid());
+                const validFn = child?.toValid
+                if (validFn) validTask.push(validFn());
             }
             Promise.all(validTask)
                 .then(() => {
-                    if(!isAgree) alert('请先同意协议！')
+                    if(!this.isAgree) return this.$refs.tip.show()
                     // 通过表单验证
                     console.log('表单预验证通过！')
+                    this.$router.push('/main/register-all')
                 })
                 .catch(err => err);
         }
@@ -74,7 +78,6 @@ const codeValid = value => {
     return Promise.resolve();
 }
 
-const isAgree = ref(false)
 </script>
 <template>
     <div
@@ -119,12 +122,15 @@ const isAgree = ref(false)
                     <span @click="getCode($event)" class="code-btn">获取验证码</span>
                 </template>
             </FormInput>
-            <div class="agree-text">
-                <input id="agree" type="checkbox" v-model="isAgree">
-                <label for="agree">
-                    同意
-                    <span>《浙江东方职业技术学院校友服务协议》</span>
-                </label>
+            <div style="position: relative">
+                <div class="agree-text" ref="tip">
+                    <input id="agree" type="checkbox" v-model="isAgree">
+                    <label for="agree">
+                        同意
+                        <span>《浙江东方职业技术学院校友服务协议》</span>
+                    </label>
+                </div>
+                <cube-tip ref="tip" direction="bottom" style="left:20px;top:-50px;">请先勾选同意协议！</cube-tip>
             </div>
             <button class="submit-btn" v-ripple="'#999'" @click="onSubmit">
                 注册
